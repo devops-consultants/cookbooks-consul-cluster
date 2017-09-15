@@ -1,0 +1,17 @@
+name: consul
+title: Consul Server
+maintainer: DevOps Consultants Ltd
+copyright: DevOps Consultants Ltd
+copyright_email: rob.coward@devops-consultants.co.uk
+license: Apache-2.0
+summary: Verify that the Server is configured securely
+version: 1.0.0
+supports:
+  - os-family: linux
+# depends:
+#   - name: CIS Distribution Independent Linux Benchmark
+#     git: https://github.com/dev-sec/cis-dil-benchmark
+#   - name: DevSec Linux Baseline
+#     git: https://github.com/dev-sec/linux-baseline
+#   - name: ssh-hardening
+#     git: https://github.com/dev-sec/ssh-baseline

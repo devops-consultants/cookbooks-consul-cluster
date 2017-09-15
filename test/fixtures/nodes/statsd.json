@@ -1,0 +1,12 @@
+{
+  "id": "statsd",
+  "name": "statsd",
+  "chef_type": "node",
+  "json_class": "Chef::Node",
+  "chef_environment": "Testing",
+  "run_list": ["recipe[statsd]"],
+  "automatic": {
+    "ipaddress": "10.0.0.76",
+    "recipes": ["statsd"]
+  }
+}

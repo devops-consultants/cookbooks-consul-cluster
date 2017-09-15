@@ -1,0 +1,12 @@
+{
+  "id": "bastion",
+  "name": "bastion",
+  "chef_type": "node",
+  "json_class": "Chef::Node",
+  "chef_environment": "Testing",
+  "run_list": ["recipe[consul_cluster]"],
+  "automatic": {
+    "recipes": ["consul_cluster"],
+    "ipaddress": "10.0.0.75"
+  }
+}

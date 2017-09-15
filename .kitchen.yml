@@ -1,0 +1,40 @@
+---
+driver:
+  name: dokken
+  chef_version: latest
+  privileged: true
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-7
+    driver:
+      image: centos:7
+      platform: rhel
+      pid_one_command: /usr/lib/systemd/systemd
+      intermediate_instructions:
+        - RUN yum -y install lsof which systemd-sysv initscripts wget net-tools 
+
+suites:
+  - name: default
+    data_bags_path: "test/fixtures/data_bags" 
+    nodes_path: "test/fixtures/nodes"
+    run_list:
+      - recipe[consul_cluster::default]
+      - node_attributes
+    attributes: {
+      "authorization": {
+        "sudo": {
+          "users": ["kitchen"],
+          "passwordless": true
+        }
+      }
+    }
+

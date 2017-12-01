@@ -1,9 +1,9 @@
 {
-  "id": "bastion",
-  "name": "bastion",
+  "id": "bootstrap-centos-7",
+  "name": "bootstrap-centos-7",
   "chef_type": "node",
   "json_class": "Chef::Node",
-  "chef_environment": "Testing",
+  "chef_environment": "_default",
   "run_list": ["recipe[consul_cluster]"],
   "automatic": {
     "recipes": ["consul_cluster"],

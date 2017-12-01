@@ -23,8 +23,20 @@ platforms:
         - RUN yum -y install lsof which systemd-sysv initscripts wget net-tools 
 
 suites:
-  - name: default
-    data_bags_path: "test/fixtures/data_bags" 
+  - name: bootstrap
+    nodes_path: "test/fixtures/nodes"
+    run_list:
+      - recipe[consul_cluster::default]
+      - node_attributes
+    attributes: {
+      "authorization": {
+        "sudo": {
+          "users": ["kitchen"],
+          "passwordless": true
+        }
+      }
+    }
+  - name: server
     nodes_path: "test/fixtures/nodes"
     run_list:
       - recipe[consul_cluster::default]

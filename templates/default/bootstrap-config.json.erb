@@ -1,6 +1,7 @@
 {
     "bootstrap": true,
     "server": true,
+    "bind_addr": "<%= node['ipaddress'] %>",
     "datacenter": "<%= @data_center %>",
     "data_dir": "<%= @data_dir %>",
     "encrypt": "<%= @encrypt_key %>",

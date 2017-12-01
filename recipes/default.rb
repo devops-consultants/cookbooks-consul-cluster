@@ -33,7 +33,7 @@ directory '/etc/consul.d/server' do
     action :create
 end
 
-join_servers =  search(:node, 'recipes:"consul_cluster"')
+join_servers =  search(:node, "recipes:consul_cluster and !name:#{node['name']}")
 startup_type = join_servers.empty? ? 'bootstrap' : 'server'
 
 template '/etc/consul.d/server/config.json' do
